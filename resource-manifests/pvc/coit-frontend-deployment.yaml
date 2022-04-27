@@ -8,7 +8,7 @@ spec:
   selector:
     matchLabels:
       app: coit-frontend
-  replicas: 1                                             # 2
+  replicas: 2                                             # 2
   minReadySeconds: 15
   strategy:
     type: RollingUpdate                                   # 3
@@ -20,17 +20,18 @@ spec:
       labels:
         app: coit-frontend                                  # 6
     spec:
+      volumes: 
+        - name: nginx-root
+          persistentVolumeClaim:
+            claimName: coit-frontend-fast
       containers:
         - image: asia.gcr.io/my-first-project-347716/coit-frontend:1.0.0
           imagePullPolicy: IfNotPresent                         # 7
           name: coit-frontend
-          resources:
-            requests:
-              memory: "512Mi"
-              cpu: "250m"
-            limits:
-              memory: "512Mi"
-              cpu: "500m"
           ports:
             - containerPort: 80
+          volumeMounts:
+            - mountPath: /usr/share/nginx/html
+              name: nginx-root
+              
   
