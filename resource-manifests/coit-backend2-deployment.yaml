@@ -24,5 +24,12 @@ spec:
         - image: coitlearning/coit-backend2:v3
           imagePullPolicy: IfNotPresent
           name: coit-backend2
+          resources:
+          requests:
+            memory: "512Mi"
+            cpu: "250m"
+          limits:
+            memory: "512Mi"
+            cpu: "500m"
           ports:
             - containerPort: 5000
