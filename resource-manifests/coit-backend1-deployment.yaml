@@ -24,6 +24,13 @@ spec:
       - image: coitlearning/coit-backend1:v3
         imagePullPolicy: IfNotPresent
         name: coit-backend1
+        resources:
+          requests:
+            memory: "512Mi"
+            cpu: "250m"
+          limits:
+            memory: "512Mi"
+            cpu: "500m"
         env:
           - name: SA_LOGIC_API_URL
             value: "http://coit-backend2"
