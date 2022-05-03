@@ -29,7 +29,7 @@ spec:
             memory: "512Mi"
             cpu: "250m"
           limits:
-            memory: "512Mi"
+            memory: "1024Mi"
             cpu: "500m"
         env:
           - name: SA_LOGIC_API_URL
