@@ -24,13 +24,13 @@ spec:
         - image: dheerajlearningdocker/coit-frontend:v9.4
           imagePullPolicy: IfNotPresent                         # 7
           name: coit-frontend
-          resources:
-            requests:
-              memory: "512Mi"
-              cpu: "250m"
-            limits:
-              memory: "512Mi"
-              cpu: "500m"
+          # resources:
+          #   requests:
+          #     memory: "512Mi"
+          #     cpu: "250m"
+          #   limits:
+          #     memory: "512Mi"
+          #     cpu: "500m"
           ports:
             - containerPort: 80
   
