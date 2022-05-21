@@ -21,7 +21,7 @@ spec:
         app: coit-frontend                                  # 6
     spec:
       containers:
-        - image: asia.gcr.io/my-first-project-347716/coit-frontend:1.0.0
+        - image: dheerajlearningdocker/coit-frontend:v9.4
           imagePullPolicy: IfNotPresent                         # 7
           name: coit-frontend
           resources:
