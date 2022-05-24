@@ -25,7 +25,7 @@ pipeline{
 				echo "path- $PATH"
 				script{
 				def FRONTENDDOCKER = 'Dockerfile-multistage'
-				DockerFrontend = docker.build("kollidatta/frontend:${env.BUILD_TAG}","-f ${FRONTENDDOCKER} .")
+				DockerFrontend = docker.build("dheerajlearningdocker/frontend:${env.BUILD_TAG}","-f ${FRONTENDDOCKER} .")
 				//sh('docker build -t kollidatta/coitfrontend:v1 -f Dockerfile-multistage .')
 				}
 				} 
@@ -47,7 +47,7 @@ pipeline{
                 dir('./coit-backend2'){
 				echo "path- $PATH"
 				script{
-				DockerBackend2 = docker.build("kollidatta/backend2:${env.BUILD_TAG}")
+				DockerBackend2 = docker.build("dheerajlearningdocker/backend2:${env.BUILD_TAG}")
 				//sh('docker build -t kollidatta/coitbackend2:v1 -f ./coit-backend2/Dockerfile .')
 				}
 				}
@@ -70,7 +70,7 @@ pipeline{
                 dir('./coit-backend1'){
 					script{
 					def BACKENDDCKER = 'Dockerfile-multistage'
-					DockerBackend1 = docker.build("kollidatta/backend1:${env.BUILD_TAG}","-f ${BACKENDDCKER} .")
+					DockerBackend1 = docker.build("dheerajlearningdocker/backend1:${env.BUILD_TAG}","-f ${BACKENDDCKER} .")
 					//sh('docker build -t kollidatta/coitbackend2:v1 -f ./coit-backend2/Dockerfile .')
 					}
 				}
