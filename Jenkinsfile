@@ -97,32 +97,32 @@ pipeline{
 
 			}
 		}
-		stage('Deploy to K8s'){
-			steps{
-				dir('./resource-manifests'){
-					script{
-						kubernetesDeploy(
-							configs:"service-coit-frontend-lb.yaml",
-							kubeconfigId:"K8S",
-							enableConfigSubstitution:true
-						)
-						}
-					}		
-				}
-			}
-		stage('Deploy backend2 to K8s'){
-			steps{
-				dir('./resource-manifests'){
-					script{
-						kubernetesDeploy(
-							configs:"coit-frontend-deployment.yaml",
-							kubeconfigId:"K8S",
-							enableConfigSubstitution:true
-						)
-						}
-					}		
-				}
-			}
+		// stage('Deploy to K8s'){
+		// 	steps{
+		// 		dir('./resource-manifests'){
+		// 			script{
+		// 				kubernetesDeploy(
+		// 					configs:"service-coit-frontend-lb.yaml",
+		// 					kubeconfigId:"K8S",
+		// 					enableConfigSubstitution:true
+		// 				)
+		// 				}
+		// 			}		
+		// 		}
+		// 	}
+		// stage('Deploy backend2 to K8s'){
+		// 	steps{
+		// 		dir('./resource-manifests'){
+		// 			script{
+		// 				kubernetesDeploy(
+		// 					configs:"coit-frontend-deployment.yaml",
+		// 					kubeconfigId:"K8S",
+		// 					enableConfigSubstitution:true
+		// 				)
+		// 				}
+		// 			}		
+		// 		}
+		// 	}
     }
 	post {
 			always{
