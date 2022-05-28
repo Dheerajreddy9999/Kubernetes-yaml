@@ -21,7 +21,7 @@ spec:
         app: coit-frontend                                  # 6
     spec:
       containers:
-        - image: 358741263636.dkr.ecr.ap-south-1.amazonaws.com/coit-frontend:latest
+        - image: coitfrontend1.azurecr.io/dheerajlearningdocker/frontend:latest
           imagePullPolicy: IfNotPresent                         # 7
           name: coit-frontend
           # resources:
