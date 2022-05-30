@@ -107,6 +107,11 @@ pipeline{
 				sh 'cd resource-manifests && kubectl apply -f service-coit-frontend-lb.yaml'
 			}
 		}
+		stage('To get the services&deployemnts'){
+			steps{
+				sh 'kubectl get deployments && kubectl get services'
+			}
+		}
 		// stage('Deploy to K8s'){
 		// 	steps{
 		// 		dir('./resource-manifests'){
