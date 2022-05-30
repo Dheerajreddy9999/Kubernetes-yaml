@@ -109,7 +109,7 @@ pipeline{
 		}
 		stage('To get the services&deployemnts'){
 			steps{
-				sh 'kubectl get deployments && kubectl get services'
+				sh 'kubectl get pods && kubectl get services'
 			}
 		}
 		// stage('Deploy to K8s'){
