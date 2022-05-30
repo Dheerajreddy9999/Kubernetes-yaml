@@ -97,7 +97,7 @@ pipeline{
 
 			}
 		}
-		stage(create frontend deployment){
+		stage('create frontend deployment'){
 			steps{
 				sh 'cd resource-manifests'
 				sh 'kubectl apply -f coit-frontend-deployment.yaml'
