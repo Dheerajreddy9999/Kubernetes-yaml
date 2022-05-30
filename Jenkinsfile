@@ -99,8 +99,8 @@ pipeline{
 		}
 		stage('create frontend deployment'){
 			steps{
-				sh 'cd resource-manifests'
-				sh 'kubectl apply -f coit-frontend-deployment.yaml'
+				sh 'cd resource-manifests && kubectl apply -f coit-frontend-deployment.yaml'
+				// sh 'kubectl apply -f coit-frontend-deployment.yaml'
 			}
 		}
 		// stage('Deploy to K8s'){
